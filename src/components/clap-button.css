@@ -1,0 +1,59 @@
+.clap-button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.clap-button {
+  background: url('../assets/thumbs-up.svg') no-repeat;
+  height: 15em;
+  width: 15em;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 50%;
+  background-position: 5em;
+  background-size: 5em;
+
+  border: 2px solid #5F0F40;
+  cursor: pointer;
+}
+
+.clap-button:hover {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+.clap-button:focus {
+  outline: none;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0px 0px #5F0F40;
+  }
+
+  100% {
+    box-shadow: 0 0 80px 20px #ff44b7;
+  }
+}
+
+.clap-counter {
+  border-radius: 50%;
+  font-size: 1.1em;
+  color: white;
+  background: #ff44b7;
+  height: 1.6em;
+  width: 1.6em;
+  text-align: center;
+  line-height: 1.6em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.is-visible {
+  opacity: 1;
+}
+
+.is-hidden {
+  opacity: 0;
+}
