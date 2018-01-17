@@ -13,7 +13,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public",
+    "build-storybook-app": "build-storybook -s public -o .out",
     "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
@@ -21,5 +21,10 @@
     "@storybook/addon-links": "^3.3.6",
     "@storybook/react": "^3.3.6",
     "@storybook/storybook-deployer": "^2.2.0"
+  },
+  "storybook-deployer": {
+    "gitUsername": "ShlokD",
+    "gitEmail": "shlokpdesai@gmail.com",
+    "commitMessage": "Deploy Storybook to GitHub Pages"
   }
 }
