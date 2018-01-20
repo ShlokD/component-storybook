@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+
+.email-signup-container {
+  display: inline;
+}
+
+.email-signup-field {
+  width: 45%;
+  padding: 0.8em;
+  position: relative;
+  font-size: 1.2em;
+  border: none;
+  outline: none;
+  box-shadow: inset 0px 0px 2px 2px #247BA0;
+  border-radius: 12px;
+  font-family: 'Lato', sans-serif;
+}
+
+.email-signup-submit {
+  position: relative;
+  width: 18%;
+  background:#2C5784;
+  margin-left: -18.5%;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #FCF7F8;
+  font-weight: 600;
+  padding: 0.6em;
+  font-size: 1.2em;
+  transition: transform 0.4s ease-in, width 0.4s 0.1s ease-in;
+  text-shadow: 1px 1px 3px #251101;
+  font-family: 'Lato', sans-serif;
+}
+
+.email-signup-submit:focus {
+  border: none;
+  outline: none;
+}
+
+.submitted {
+  transform: translateX(-61.5%);
+  width: 46.5%;
+}
