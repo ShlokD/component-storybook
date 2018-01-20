@@ -5,34 +5,44 @@ export class MultiQuestionInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      questionsMap: props.questions.map(question => ({ question, answer: "" })),
       questionIndex: 0
-    }
+    };
+    this.completed = [];
 
     this._onNextQuestion = this._onNextQuestion.bind(this);
   }
 
   _onNextQuestion() {
-    if (this.state.questionIndex < this.state.questionsMap.length - 1) {
+    const length = this.props.questions.length;
+    const { questionIndex } = this.state;
+
+    if (questionIndex < length) {
+      const answer = this.refs.answer.value;
+      this.refs.answer.value = "";
+      this.completed.push({ question: this.props.questions[questionIndex], answer});
+    }
+    
+    if (questionIndex < length - 1) {
       this.setState({
-        questionIndex: this.state.questionIndex + 1
+        questionIndex: questionIndex + 1
       });
     } else {
-      console.log(this.state.questionsMap);
+      console.log(this.completed);
     }
   }
 
   render() {
-    const { questionsMap, questionIndex } = this.state;
-    if (questionsMap.length > 0) {
-      const currentQuestion = questionsMap[questionIndex];
+    const { questionIndex } = this.state;
+    const { questions } = this.props;
+    if (questions.length > 0) {
+      const currentQuestion = questions[questionIndex];
       return (<div className="multi-question-container">
-        <span className="question">{currentQuestion.question}</span>
+        <span className="question">{currentQuestion}</span>
         <div className="question-form">
-        <input className="answer-field" type="text" maxlength="15"/>
+        <input ref="answer" className="answer-field" type="text" maxlength="15"/>
         <button onClick={this._onNextQuestion} className="question-submit" />
         </div>
-        <span className="question-count">{`${questionIndex + 1} of ${questionsMap.length}`}</span>
+        <span className="question-count">{`${questionIndex + 1} of ${questions.length}`}</span>
       </div>)
     }
 
