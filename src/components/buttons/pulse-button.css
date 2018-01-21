@@ -1,5 +1,5 @@
 .pulse-button-container {
-  height:360px;
+  height: 360px;
   width: 360px;
 
   padding-left: 40%;
@@ -11,14 +11,14 @@
 
 .pulse-button {
   border-radius: 50%;
-  background-color: #292F36;
+  background-color: #292f36;
   height: 12em;
   width: 24em;
   padding: 1.6em;
   outline: none;
-  color: #4ECDC4;
+  color: #4ecdc4;
   font-size: 1.2em;
-  border: 2px solid #4ECDC4;
+  border: 2px solid #4ecdc4;
   animation-name: pulse;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -33,26 +33,24 @@
   margin: 0 1.2em;
   border-radius: 10%;
 
-  color: #FCFFF7;
+  color: #fcfff7;
   background-color: #046865;
   transition: opacity 400ms ease-in-out;
 }
 
-
 @keyframes pulse {
   0% {
-    box-shadow: inset 0 0 0px 0px #4ECDC4;
+    box-shadow: inset 0 0 0px 0px #4ecdc4;
   }
 
   100% {
-    box-shadow: inset 0 0 80px 20px #4ECDC4;
+    box-shadow: inset 0 0 80px 20px #4ecdc4;
   }
 }
 
 .is-visible {
-  opacity: 1
+  opacity: 1;
 }
-
 
 .is-hidden {
   opacity: 0;

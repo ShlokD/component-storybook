@@ -18,10 +18,13 @@ export class MultiQuestionInput extends Component {
 
     if (questionIndex < length) {
       const answer = this.refs.answer.value;
-      this.refs.answer.value = "";
-      this.completed.push({ question: this.props.questions[questionIndex], answer});
+      this.refs.answer.value = '';
+      this.completed.push({
+        question: this.props.questions[questionIndex],
+        answer
+      });
     }
-    
+
     if (questionIndex < length - 1) {
       this.setState({
         questionIndex: questionIndex + 1
@@ -36,18 +39,29 @@ export class MultiQuestionInput extends Component {
     const { questions } = this.props;
     if (questions.length > 0) {
       const currentQuestion = questions[questionIndex];
-      return (<div className="multi-question-container">
-        <span className="question">{currentQuestion}</span>
-        <div className="question-form">
-        <input ref="answer" className="answer-field" type="text" maxlength="15"/>
-        <button onClick={this._onNextQuestion} className="question-submit" />
+      return (
+        <div className="multi-question-container">
+          <span className="question">{currentQuestion}</span>
+          <div className="question-form">
+            <input
+              ref="answer"
+              className="answer-field"
+              type="text"
+              maxlength="15"
+            />
+            <button
+              onClick={this._onNextQuestion}
+              className="question-submit"
+            />
+          </div>
+          <span className="question-count">{`${questionIndex + 1} of ${
+            questions.length
+          }`}</span>
         </div>
-        <span className="question-count">{`${questionIndex + 1} of ${questions.length}`}</span>
-      </div>)
+      );
     }
 
     return null;
-
   }
 }
 

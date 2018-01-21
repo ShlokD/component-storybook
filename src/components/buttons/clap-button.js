@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import './clap-button.css';
 
 export class ClapButton extends Component {
@@ -15,7 +15,10 @@ export class ClapButton extends Component {
   }
 
   _onClick() {
-    const newClapCount = this.state.clapCount < this.props.maxClap ? this.state.clapCount + 1 : this.state.clapCount;
+    const newClapCount =
+      this.state.clapCount < this.props.maxClap
+        ? this.state.clapCount + 1
+        : this.state.clapCount;
     this.setState({
       clapCount: newClapCount,
       clapCounterVisible: true
@@ -32,12 +35,17 @@ export class ClapButton extends Component {
   render() {
     return (
       <div className="clap-button-container">
-        <div className={`clap-counter ${this.state.clapCounterVisible ? 'is-visible' : 'is-hidden'}`}>{this.state.clapCount}</div>
-        <button className="clap-button" onClick={this._onClick}></button>
+        <div
+          className={`clap-counter ${
+            this.state.clapCounterVisible ? 'is-visible' : 'is-hidden'
+          }`}>
+          {this.state.clapCount}
+        </div>
+        <button className="clap-button" onClick={this._onClick} />
       </div>
     );
   }
-};
+}
 
 ClapButton.defaultProps = {
   maxClap: 10
