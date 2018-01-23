@@ -14,6 +14,11 @@
   box-shadow: inset 0px 0px 2px 2px #247ba0;
   border-radius: 12px;
   font-family: 'Lato', sans-serif;
+  transition: box-shadow ease-in-out 0.2s;
+}
+
+.invalid {
+  box-shadow: inset 0px 0px 2px 2px #dc493a;
 }
 
 .email-signup-submit {
@@ -31,6 +36,7 @@
   transition: transform 0.4s ease-in, width 0.4s 0.1s ease-in;
   text-shadow: 1px 1px 3px #251101;
   font-family: 'Lato', sans-serif;
+  cursor: pointer;
 }
 
 .email-signup-submit:focus {

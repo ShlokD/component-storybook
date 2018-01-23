@@ -11,12 +11,11 @@ import { PulseButton } from '../components/buttons/pulse-button';
 
 import { MultiQuestionInput } from '../components/inputs/multi-question-input';
 import { EmailSignup } from '../components/inputs/email-signup';
+import { MarkdownInput } from '../components/inputs/markdown-input';
 
 const questions = ['What is your hometown?', 'Do you have a pet?'];
 
-const emailAction = decorateAction([
-  args => args.slice(0, 1)
-]);
+const emailAction = decorateAction([args => args.slice(0, 1)]);
 
 storiesOf('Button', module)
   .add('Clap Button', () => <ClapButton />)
@@ -27,5 +26,6 @@ storiesOf('Inputs', module)
     <MultiQuestionInput questions={questions} />
   ))
   .add('Email Signup', () => (
-    <EmailSignup onEmailSubmit={ emailAction('email-submit')} />
-  ));
+    <EmailSignup onEmailSubmit={emailAction('email-submit')} />
+  ))
+  .add('Markdown Input', () => <MarkdownInput />);
