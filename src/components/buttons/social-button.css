@@ -1,0 +1,58 @@
+.social-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.share-button {
+  background: #04151F;
+  color: #EFD6AC;
+  padding: 0.6em;
+  width: 15em;
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  border-radius: 12px;
+  font-size: 1.4em;
+  font-weight: 600;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 0.5s 0.125s ease-out;
+}
+
+.share-expanded {
+  opacity: 0;
+}
+
+.icon {
+  width: 4em;
+  height: 4em;
+  margin-right: 0%;
+  border-radius: 50%;
+  position: absolute;
+  transform: margin-right 0.625s ease-in;
+}
+
+.icon-expanded {
+  margin-right: 1em;
+}
+
+.icon-fb {
+  background:  #EFD6AC url('../../assets/facebook.svg') no-repeat 50%;
+}
+
+.icon-twitter {
+  background:  #EFD6AC  url('../../assets/twitter.svg') no-repeat 50%;
+}
+
+.icon-close {
+  background:  #EFD6AC  url('../../assets/x-circle.svg') no-repeat 50%;
+}
