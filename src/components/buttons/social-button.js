@@ -9,6 +9,7 @@ export class SocialButton extends Component {
     };
 
     this._handleShareClick = this._handleShareClick.bind(this);
+    this._handleCloseClick = this._handleCloseClick.bind(this);
   }
 
   _handleShareClick() {
@@ -17,15 +18,23 @@ export class SocialButton extends Component {
     });
   }
 
-  render() {
-    const shareButtonClass = `share-button ${this.state.shareExpanded ? 'share-expanded': ''}`;
-    const iconClass = `icon ${this.state.shareExpanded ? 'icon-expanded': ''}`;
+  _handleCloseClick() {
+    this.setState({
+      shareExpanded: !this.state.shareExpanded
+    });
+  }
+
+  render() {    
+    const shareButtonClass = `share-button ${this.state.shareExpanded ? 'share-expanded' : ''}`;
+    const iconClass = `icon ${this.state.shareExpanded ? 'icon-expanded' : ''}`;
 
     return (<div className="social-button-container">
       <button className={shareButtonClass} onClick={this._handleShareClick}>Share</button>
-      <button className={`${iconClass} icon-fb`} />
-      <button className={`${iconClass} icon-twitter`}  />
-      <button className={`${iconClass} icon-close`}  />
+      <div className="icons-container">
+        <button className={`${iconClass} icon-fb`} />
+        <button className={`${iconClass} icon-twitter`} />
+        <button className={`${iconClass} icon-close`} onClick={this._handleCloseClick} />
+      </div>
     </div>)
   }
 }

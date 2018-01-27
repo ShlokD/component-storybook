@@ -25,34 +25,49 @@ button:focus {
   font-weight: 600;
   z-index: 2;
   opacity: 1;
-  transition: opacity 0.5s 0.125s ease-out;
+  transition: opacity 0.5s 0.125s ease-out, visibility 0.5s 0.125s ease-out;
 }
 
 .share-expanded {
   opacity: 0;
+  visibility: hidden;
+}
+ 
+.icons-container {
+  position: absolute;
 }
 
 .icon {
+  position: relative;
   width: 4em;
   height: 4em;
   margin-right: 0%;
   border-radius: 50%;
-  position: absolute;
-  transform: margin-right 0.625s ease-in;
+  margin: 0;
+  transition: all 0.8s 0.625s ease-in-out;
 }
 
-.icon-expanded {
-  margin-right: 1em;
-}
 
 .icon-fb {
   background:  #EFD6AC url('../../assets/facebook.svg') no-repeat 50%;
+}
+
+.icon-fb.icon-expanded {
+  transform: translate(-0.8em, 0.2em);
 }
 
 .icon-twitter {
   background:  #EFD6AC  url('../../assets/twitter.svg') no-repeat 50%;
 }
 
+.icon-twitter.icon-expanded {
+  transform: translate(0em, 0.2em);
+}
+
 .icon-close {
   background:  #EFD6AC  url('../../assets/x-circle.svg') no-repeat 50%;
+}
+
+.icon-close.icon-expanded {
+  transform: translate(0.8em, 0.2em);
 }
