@@ -15,7 +15,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook-app": "build-storybook -s public -o .out",
-    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook": "storybook-to-ghpages --existing-output-dir=.out",
     "prettier": "prettier --write -config ./.prettierrc \"src/**/*.{js,jsx,css}\""
   },
   "devDependencies": {
