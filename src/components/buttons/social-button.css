@@ -14,8 +14,8 @@ button:focus {
 }
 
 .share-button {
-  background: #04151F;
-  color: #EFD6AC;
+  background: #04151f;
+  color: #efd6ac;
   padding: 0.6em;
   width: 15em;
   margin: 0;
@@ -32,7 +32,7 @@ button:focus {
   opacity: 0;
   visibility: hidden;
 }
- 
+
 .icons-container {
   position: absolute;
 }
@@ -47,9 +47,8 @@ button:focus {
   transition: all 0.8s 0.625s ease-in-out;
 }
 
-
 .icon-fb {
-  background:  #EFD6AC url('../../assets/facebook.svg') no-repeat 50%;
+  background: #efd6ac url('../../assets/facebook.svg') no-repeat 50%;
 }
 
 .icon-fb.icon-expanded {
@@ -57,7 +56,7 @@ button:focus {
 }
 
 .icon-twitter {
-  background:  #EFD6AC  url('../../assets/twitter.svg') no-repeat 50%;
+  background: #efd6ac url('../../assets/twitter.svg') no-repeat 50%;
 }
 
 .icon-twitter.icon-expanded {
@@ -65,7 +64,7 @@ button:focus {
 }
 
 .icon-close {
-  background:  #EFD6AC  url('../../assets/x-circle.svg') no-repeat 50%;
+  background: #efd6ac url('../../assets/x-circle.svg') no-repeat 50%;
 }
 
 .icon-close.icon-expanded {

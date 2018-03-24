@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import './social-button.css';
 
 export class SocialButton extends Component {
@@ -24,17 +24,26 @@ export class SocialButton extends Component {
     });
   }
 
-  render() {    
-    const shareButtonClass = `share-button ${this.state.shareExpanded ? 'share-expanded' : ''}`;
+  render() {
+    const shareButtonClass = `share-button ${
+      this.state.shareExpanded ? 'share-expanded' : ''
+    }`;
     const iconClass = `icon ${this.state.shareExpanded ? 'icon-expanded' : ''}`;
 
-    return (<div className="social-button-container">
-      <button className={shareButtonClass} onClick={this._handleShareClick}>Share</button>
-      <div className="icons-container">
-        <button className={`${iconClass} icon-fb`} />
-        <button className={`${iconClass} icon-twitter`} />
-        <button className={`${iconClass} icon-close`} onClick={this._handleCloseClick} />
+    return (
+      <div className="social-button-container">
+        <button className={shareButtonClass} onClick={this._handleShareClick}>
+          Share
+        </button>
+        <div className="icons-container">
+          <button className={`${iconClass} icon-fb`} />
+          <button className={`${iconClass} icon-twitter`} />
+          <button
+            className={`${iconClass} icon-close`}
+            onClick={this._handleCloseClick}
+          />
+        </div>
       </div>
-    </div>)
+    );
   }
 }

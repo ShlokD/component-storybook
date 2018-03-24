@@ -14,6 +14,9 @@ import { EmailSignup } from '../components/inputs/email-signup';
 import { MarkdownInput } from '../components/inputs/markdown-input';
 import { SocialButton } from '../components/buttons/social-button';
 
+import { ArticleNavigation } from '../components/navigations/article-navigation';
+
+import { articles } from '../data/articles';
 const questions = ['What is your hometown?', 'Do you have a pet?'];
 
 const emailAction = decorateAction([args => args.slice(0, 1)]);
@@ -31,3 +34,7 @@ storiesOf('Inputs', module)
     <EmailSignup onEmailSubmit={emailAction('email-submit')} />
   ))
   .add('Markdown Input', () => <MarkdownInput />);
+
+storiesOf('Navigations', module).add('Article Navigation', () => (
+  <ArticleNavigation articles={articles} />
+));
