@@ -13,11 +13,11 @@
   overflow-y: scroll;
 }
 
-::-webkit-scrollbar {
+.article-list::-webkit-scrollbar {
   width: 2px;
 }
 
-::-webkit-scrollbar-thumb {
+.article-list::-webkit-scrollbar-thumb {
   background: #191308;
 }
 
