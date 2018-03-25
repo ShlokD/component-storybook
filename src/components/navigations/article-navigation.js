@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './article-navigation.css';
 
-export const Article = ({ article, onClick }) => {
+export const Article = ({ article, articleNum, onClick }) => {
   return (
     <li className="article" onClick={onClick}>
+      <p className="article-number">{articleNum + 1}</p>
       <h3 className="article-title">{article.title}</h3>
     </li>
   );
@@ -11,14 +12,17 @@ export const Article = ({ article, onClick }) => {
 
 export const FeaturedArticle = ({ article }) => {
   return (
-    <li className="article featured">
+    <li className="featured">
       <div className="featured-article-container">
         <img
           className="featured-article-image"
           src={article.image}
           alt={article.title}
         />
-        <h3 className="featured-article-title">{article.title}</h3>
+        <div className="featured-article-text">
+          <h3 className="featured-article-title">{article.title}</h3>
+          <p className="featured-article-subtitle">{article.subtitle}</p>
+        </div>
       </div>
     </li>
   );
@@ -28,7 +32,7 @@ export class ArticleNavigation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      featuredArticle: 0
+      featuredArticleIndex: 0
     };
 
     this._onArticleClick = this._onArticleClick.bind(this);
@@ -36,25 +40,26 @@ export class ArticleNavigation extends Component {
 
   _onArticleClick(id) {
     this.setState({
-      featuredArticle: id
+      featuredArticleIndex: id
     });
   }
 
   render() {
     const { articles } = this.props;
-    const { featuredArticle } = this.state;
+    const { featuredArticleIndex = 0 } = this.state;
+    const featuredArticle = articles[featuredArticleIndex] || articles[0];
 
     return (
       <div className="article-nav-container">
+        <FeaturedArticle article={featuredArticle} />
         <ul className="article-list">
           {articles.map((article, index) => {
-            return index === featuredArticle ? (
-              <FeaturedArticle key={`Article-${index}`} article={article} />
-            ) : (
+            return index === featuredArticleIndex ? null : (
               <Article
                 key={`Article-${index}`}
                 onClick={() => this._onArticleClick(index)}
                 article={article}
+                articleNum={index}
               />
             );
           })}
