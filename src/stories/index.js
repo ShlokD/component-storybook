@@ -16,7 +16,11 @@ import { SocialButton } from '../components/buttons/social-button';
 
 import { ArticleNavigation } from '../components/navigations/article-navigation';
 
+import { Matcher } from '../components/interactive/matcher';
+
 import { articles } from '../data/articles';
+import { matcherOptions as options } from '../data/matcher';
+
 const questions = ['What is your hometown?', 'Do you have a pet?'];
 
 const emailAction = decorateAction([args => args.slice(0, 1)]);
@@ -38,3 +42,7 @@ storiesOf('Inputs', module)
 storiesOf('Navigations', module).add('Article Navigation', () => (
   <ArticleNavigation articles={articles} />
 ));
+
+
+storiesOf('Interactive', module)
+  .add('Matcher', () => <Matcher options={options} />);
