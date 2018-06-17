@@ -1,3 +1,54 @@
-.matched {
-  text-decoration: line-through;
+.matcher-container {
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+  width: 360px;
+  align-items: center;
+}
+
+
+
+.checkbox input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.checkbox label {
+  font-size: 1.2em;
+  background-color: gray;
+  color: white;
+  font-weight: 500;
+  font-family: 'Lato', sans-serif;
+
+
+  width: 72px;
+  height: 24px;
+  line-height: 24px;
+  display: inline-block;
+  text-align: center;
+
+  padding: 24px;
+  border-radius: 6px;
+
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+}
+
+.checkbox {
+  margin: 24px;
+
+ 
+
+  cursor: pointer;
+}
+
+.checkbox input:checked + label {
+  background-color: lightseagreen; 
+}
+
+.matched label {
+  background-color: green;
 }
